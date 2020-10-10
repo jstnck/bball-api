@@ -1,0 +1,29 @@
+version: "3"
+services:
+
+    flask:
+        build: ./flask
+        container_name: flask
+        restart: always
+        environment:
+            DATABASE_URL: postgres:5432
+        expose:
+            - 8080
+    
+            
+    postgres:
+        build: ./postgres
+        container_name: postgres
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: admin
+        ports:
+            - "5432:5432"
+    
+    
+    nginx:
+        build: ./nginx
+        container_name: nginx
+        restart: always
+        ports:
+            - "8000:80"
