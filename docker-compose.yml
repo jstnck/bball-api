@@ -10,6 +10,14 @@ services:
         expose:
             - 8080
     
+    flask-test-basic-app:
+        build: ./flask-test-basic-app
+        container_name: flask-test-basic-app
+        restart: always
+        environment:
+            - APP_NAME=MyFlaskApp
+        expose:
+            - 8080         
             
     postgres:
         build: ./postgres
