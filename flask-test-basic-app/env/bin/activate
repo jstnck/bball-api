@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/think/courses/pythonise/dockerize/app/flask/env"
+VIRTUAL_ENV="/home/think/projects/bball-api/flask-test-basic-app/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

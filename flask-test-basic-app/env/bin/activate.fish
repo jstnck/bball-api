@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/think/courses/pythonise/dockerize/app/flask/env"
+set -gx VIRTUAL_ENV "/home/think/projects/bball-api/flask-test-basic-app/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
