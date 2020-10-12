@@ -1,14 +1,5 @@
 version: "3"
 services:
-
-    flask:
-        build: ./flask
-        container_name: flask
-        restart: always
-        environment:
-            DATABASE_URL: postgres:5432
-        expose:
-            - 8080
     
     flask-test-basic-app:
         build: ./flask-test-basic-app
