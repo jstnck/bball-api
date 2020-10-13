@@ -1,18 +1,17 @@
 version: "3"
 services:
-
-    flask:
-        build: ./flask
-        container_name: flask
+    
+    flask-test-basic-app:
+        image: jstnck/flask-test-basic-app
+        container_name: flask-test-basic-app
         restart: always
         environment:
-            DATABASE_URL: postgres:5432
+            - APP_NAME=MyFlaskApp
         expose:
-            - 8080
-    
+            - 8080         
             
     postgres:
-        build: ./postgres
+        image: jstnck/bball-api_postgres
         container_name: postgres
         environment:
             POSTGRES_USER: postgres
@@ -22,7 +21,7 @@ services:
     
     
     nginx:
-        build: ./nginx
+        image: jstnck/bball-api_nginx
         container_name: nginx
         restart: always
         ports:
