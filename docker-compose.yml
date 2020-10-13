@@ -21,7 +21,7 @@ services:
     
     
     nginx:
-        image: jstnck/bball-api_postgres
+        image: jstnck/bball-api_nginx
         container_name: nginx
         restart: always
         ports:
