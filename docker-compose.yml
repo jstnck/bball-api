@@ -1,27 +1,37 @@
 version: "3"
 services:
     
-    flask-test-basic-app:
-        image: jstnck/flask-test-basic-app
-        container_name: flask-test-basic-app
+    flask:
+        #image: jstnck/bball-api_flask
+        build: ./flask
+        container_name: flask
         restart: always
         environment:
-            - APP_NAME=MyFlaskApp
+            DATABASE_URL: postgres:5432
         expose:
-            - 8080         
-            
+            - 8080    
+
+    flask-sqlite:
+        build: ./flask-sqlite
+        container_name: flask-sqlite
+        restart: always
+        expose:
+            - 5000
+
     postgres:
-        image: jstnck/bball-api_postgres
+        #image: jstnck/bball-api_postgres
+        build: ./postgres
         container_name: postgres
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: admin
-        ports:
-            - "5432:5432"
+        expose:
+            - 5432
     
     
     nginx:
-        image: jstnck/bball-api_nginx
+        #image: jstnck/bball-api_nginx
+        build: ./nginx
         container_name: nginx
         restart: always
         ports:
