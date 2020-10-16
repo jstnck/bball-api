@@ -1,4 +1,0 @@
-##this file needs to be config'd differently than in the udemy course
-##the connection is not local - its in a diff container
-##sqlalchemy needs md5 password authentication - how does it know if its not in the same container?
-
