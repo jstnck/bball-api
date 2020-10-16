@@ -10,12 +10,6 @@ services:
         expose:
             - 8080    
 
-    flask-sqlite:
-        build: ./flask-sqlite
-        container_name: flask-sqlite
-        restart: always
-        expose:
-            - 8080
 
     postgres:
         build: ./postgres
