@@ -33,6 +33,10 @@ api.add_resource(ItemList, '/items')
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(UserRegister, '/register')
 
+@app.route('/hello')
+def hello():
+    return "hello world."
+    
 #only run app.run if we run app.py. wont run if we 
 # import app.py into another file (we probably dont want to start flask in that case)
 if __name__ == '__main__':

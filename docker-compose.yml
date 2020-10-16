@@ -16,7 +16,7 @@ services:
         container_name: flask-sqlite
         restart: always
         expose:
-            - 5000
+            - 8080
 
     postgres:
         #image: jstnck/bball-api_postgres
@@ -25,6 +25,7 @@ services:
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: admin
+            POSTGRES_DB: postgres
         expose:
             - 5432
     
