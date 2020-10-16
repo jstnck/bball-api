@@ -15,7 +15,6 @@ from resources.store import Store, StoreList
 #flask restful does jsonfiy for us, so we dont need it
 
 app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'justin'
@@ -36,7 +35,7 @@ api.add_resource(UserRegister, '/register')
 @app.route('/hello')
 def hello():
     return "hello world."
-    
+
 #only run app.run if we run app.py. wont run if we 
 # import app.py into another file (we probably dont want to start flask in that case)
 if __name__ == '__main__':
