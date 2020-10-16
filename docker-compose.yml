@@ -27,7 +27,7 @@ services:
         image: adminer
         restart: always
         ports:
-            - 8888:8080
+            - 8080:8080
         links:
             - postgres:postgres
     
@@ -36,4 +36,4 @@ services:
         container_name: nginx
         restart: always
         ports:
-            - "8080:80"
+            - "80:80"
